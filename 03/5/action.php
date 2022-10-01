@@ -1,0 +1,11 @@
+<?php
+$repeat = $_POST['repeat'];
+
+echo "$repeat 回ループします。";
+echo "<ul>";
+for ($i = 1; $i <= $repeat; $i++)
+{
+	echo "<li> $i 回目</li>";
+}
+echo "</ul>";
+?>
