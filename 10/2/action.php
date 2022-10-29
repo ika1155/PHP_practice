@@ -8,11 +8,10 @@ $tmp = scandir($path);
 $files = [];
 
 foreach ($tmp as $value){
-	if (!preg_match('/^\./', $value) && is_file('./images'.$value)){
+	if (!preg_match('/^\./', $value) && is_file('./images/'.$value)){
 		$files[] = $value;
 	}
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -25,20 +24,24 @@ foreach ($tmp as $value){
 </head>
 <body>
 	<div class="container">
-	<div class="row my-3">
-		<?php
-		$count = 1;
-		foreach($files as $value):
-		?>
-		<div class="card">
-			<div class="card-body">
-				<img src="./images/<?= $value ?>" class="img-fluid">
-			</div>
+		<div class="row my-3">
+			<?php $count = 1 ?>
+			<?php foreach($files as $value):?>
+				<div class="col md-3">
+					<div class="card">
+						<div class="card-body">
+							<img src="./images/<?= $value ?>" class="img-fluid">
+						</div>
+					</div>
+				</div>
+				<?php if($count % 4 == 0): ?>
+					</div>
+					<div class="row my-3">
+				<?php endif ?>
+				<?php $count++ ?>
+			<?php endforeach ?>
+			<a href="./">戻る</a>
 		</div>
-		
-		<?php endforeach ?>
-		<a href="./">戻る</a>
-	</div>
 	</div>
 </body>
 </html>
