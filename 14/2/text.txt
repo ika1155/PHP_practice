@@ -1,0 +1,4 @@
+<script>while(1){alert('test')}</script>
+
+Javascriptでもし1の時testというダイアログを表示するという意味
+無限ループになっているので、OKを押しても繰り返しダイアログが表示される
