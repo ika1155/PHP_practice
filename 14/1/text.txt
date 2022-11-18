@@ -1,0 +1,6 @@
+入力された値がSQLにそのまま代入され以下のSQL文になる。
+
+"SELECT * FROM todo_items WHERE expiration_date = '''' OR 1=1 --''"
+
+'''' OR 1=1 --'の部分が期日が''又は1が1の時Trueという条件なので、常にTrueを返す。
+そのため、常に全てのレコードが取得できてしまう。
